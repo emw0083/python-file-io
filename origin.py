@@ -34,8 +34,23 @@ if __name__ == '__main__':
     herit = 'herit'
    
     findline(herit)
+    beta = findline(herit)
+    
+    
+    with open('origin.txt', 'r') as in_stream:
+        print('Opening origin.txt')
+        with open('final.txt', 'w') as out_stream:
+                for line in in_stream:
+                    line = line.strip()
+                    word_list = line.split()
+                    word_list.sort()
+                    #print(beta)
+                    for word in word_list:
+                        out_stream.write('{0}\n'.format(word))
+
     
     print("Done!")
     print('origin.txt is closed?', in_stream.closed)
     print('final.txt is closed?', out_stream.closed)
+
 
