@@ -14,6 +14,20 @@ read = file.read()
 file.seek(0)
 read
 
+in_stream = 'origin.txt'
+out_stream = 'final.txt'
+
+with open('origin.txt', 'r') as in_stream:
+    print('Opening origin.txt')
+    with open('final.txt', 'w') as out_stream:
+            for line in in_stream:
+                line = line.strip()
+                word_list = line.split()
+                word_list.sort()
+                word = re.match(r('..herit....'), flags=re.IGNORECASE)
+                for word in word_list:
+                    out_stream.write('{0}\n'.format(word))
+
 # create empty list
 arr = []
 line = 1
@@ -22,27 +36,15 @@ for word in read:
     if word == '\n':
         line += 1
 print("Number of lines in file is: ", line)
- 
 for i in range(line):
     arr.append(file.readline())
-
-hertiable =
-
-findline('herit')
-
-file.close()
+                
+findline(word)
 
 
-print('Opening dummy.txt')
-with open('dummy.txt', 'r') as in_stream:
-    print('Opening output.txt')
-    with open('output.txt', 'w') as out_stream:
-        for line in in_stream:
-            line = line.strip()
-            word_list = line.split()
-            word_list.sort()
-            for word in word_list:
-                out_stream.write('{0}\n'.format(word))
 print("Done!")
-print('dummy.txt is closed?', in_stream.closed)
-print('output.txt is closed?', out_stream.closed)
+print('origin.txt is closed?', in_stream.closed)
+print('final.txt is closed?', out_stream.closed)
+
+
+            
